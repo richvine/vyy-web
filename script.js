@@ -1,103 +1,175 @@
+// =====================================
 // VYY WEBSITE JAVASCRIPT
+// =====================================
 
-// MOBILE MENU
+
+// MOBILE NAVIGATION
 
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
 
-menuButton.addEventListener("click", function () {
+if (menuButton && navLinks) {
 
-    navLinks.classList.toggle("show");
+    menuButton.addEventListener("click", function () {
 
-    menuButton.textContent =
-        navLinks.classList.contains("show") ? "✕" : "☰";
+        const isOpen = navLinks.classList.toggle("active");
 
-});
+        menuButton.textContent = isOpen ? "✕" : "☰";
 
-// CLOSE MOBILE MENU WHEN LINK IS CLICKED
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
-document.querySelectorAll(".nav-links a").forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        navLinks.classList.remove("show");
-        menuButton.textContent = "☰";
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
 
     });
 
-});
+
+    // CLOSE MENU WHEN LINK IS CLICKED
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("active");
+
+            menuButton.textContent = "☰";
+
+            menuButton.setAttribute("aria-expanded", "false");
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+
+        });
+
+    });
 
 
+    // RESET MENU ON DESKTOP
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 768) {
+
+            navLinks.classList.remove("active");
+
+            menuButton.textContent = "☰";
+
+            menuButton.setAttribute("aria-expanded", "false");
+
+        }
+
+    });
+
+}
+
+
+// =====================================
 // AUTOMATIC FOOTER YEAR
+// =====================================
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+
+    yearElement.textContent = new Date().getFullYear();
+
+}
 
 
+// =====================================
 // CONTACT FORM VALIDATION
+// =====================================
 
 const contactForm = document.getElementById("contact-form");
+
 const formStatus = document.getElementById("form-status");
 
-contactForm.addEventListener("submit", function (event) {
+if (contactForm) {
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
+    contactForm.addEventListener("submit", function (event) {
 
-    if (!name || !email || !message) {
+        const name = contactForm.querySelector('[name="name"]').value.trim();
 
-        event.preventDefault();
+        const email = contactForm.querySelector('[name="email"]').value.trim();
 
-        formStatus.textContent = "Please complete all fields.";
-        formStatus.style.color = "#ff5555";
-
-        return;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(email)) {
-
-        event.preventDefault();
-
-        formStatus.textContent = "Please enter a valid email address.";
-        formStatus.style.color = "#ff5555";
-
-        return;
-    }
-
-    // Allow valid form submission to Netlify.
-    // Netlify will process the message after deployment.
-
-});
+        const message = contactForm.querySelector('[name="message"]').value.trim();
 
 
+        if (!name || !email || !message) {
+
+            event.preventDefault();
+
+            formStatus.textContent = "Please complete all fields.";
+
+            formStatus.style.color = "#ff5555";
+
+            return;
+
+        }
+
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (!emailPattern.test(email)) {
+
+            event.preventDefault();
+
+            formStatus.textContent = "Please enter a valid email address.";
+
+            formStatus.style.color = "#ff5555";
+
+            return;
+
+        }
+
+    });
+
+}
+
+
+// =====================================
 // SCROLL ANIMATIONS
+// =====================================
 
 const animatedElements = document.querySelectorAll(
     ".section-heading, .about-card, .service-card, .contact-card"
 );
 
+
 if ("IntersectionObserver" in window) {
 
-    const observer = new IntersectionObserver(function (entries) {
+    const observer = new IntersectionObserver(
 
-        entries.forEach(function (entry) {
+        function (entries) {
 
-            if (entry.isIntersecting) {
+            entries.forEach(function (entry) {
 
-                entry.target.classList.add("visible");
+                if (entry.isIntersecting) {
 
-                observer.unobserve(entry.target);
+                    entry.target.classList.add("visible");
 
-            }
+                    observer.unobserve(entry.target);
 
-        });
+                }
 
-    }, {
-        threshold: 0.15
-    });
+            });
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
 
     animatedElements.forEach(function (element) {
 
@@ -108,5 +180,10 @@ if ("IntersectionObserver" in window) {
     });
 
 }
+
+
+// =====================================
+// WEBSITE STATUS
+// =====================================
 
 console.log("VYY website is running successfully!");
