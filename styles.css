@@ -1,3 +1,7 @@
+/* =================================
+   VYY WEBSITE - UPDATED STYLES
+================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,22 +10,22 @@
 
 html {
     scroll-behavior: smooth;
+    min-height: 100%;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #080914;
-
-    /* VYY BACKGROUND IMAGE */
-    background-image: url("https://raw.githubusercontent.com/richvine/vyy-web/main/Gemini_Generated_Image_97qc6097qc6097qc.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
+    min-height: 100vh;
     color: white;
     line-height: 1.6;
+
+    /* BACKGROUND IMAGE */
+    background-color: #080914;
+    background-image: url("https://raw.githubusercontent.com/richvine/vyy-web/main/Gemini_Generated_Image_97qc6097qc6097qc.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* NAVIGATION */
@@ -80,7 +84,7 @@ header {
     cursor: pointer;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero {
     min-height: 100vh;
@@ -90,6 +94,7 @@ header {
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+
     background: transparent;
 }
 
@@ -120,7 +125,7 @@ header {
 }
 
 .hero-description {
-    color: #fff;
+    color: white;
     font-size: 18px;
     max-width: 520px;
     margin-bottom: 35px;
@@ -160,6 +165,8 @@ header {
     background: #9333ea;
 }
 
+/* HERO DECORATION */
+
 .hero-decoration {
     width: 300px;
     height: 300px;
@@ -185,7 +192,7 @@ header {
     background: linear-gradient(135deg, #ec4899, #9333ea);
 }
 
-/* SECTIONS */
+/* GENERAL SECTIONS */
 
 .section {
     padding: 110px 10%;
@@ -228,7 +235,7 @@ header {
 }
 
 .about-card p {
-    color: #fff;
+    color: white;
     font-size: 17px;
     margin-bottom: 25px;
 }
@@ -277,7 +284,7 @@ header {
 }
 
 .service-card p {
-    color: #fff;
+    color: white;
 }
 
 /* CONTACT */
@@ -292,7 +299,7 @@ header {
 }
 
 .contact-card > p {
-    color: #fff;
+    color: white;
     text-align: center;
     margin-bottom: 25px;
 }
@@ -390,11 +397,17 @@ footer > a:last-child {
     }
 }
 
-/* MOBILE */
+/* MOBILE RESPONSIVENESS */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     body {
+        background-image: url("https://raw.githubusercontent.com/richvine/vyy-web/main/Gemini_Generated_Image_97qc6097qc6097qc.jpg") !important;
+
+        background-color: #080914;
+        background-size: auto 100vh;
+        background-position: center top;
+        background-repeat: repeat-y;
         background-attachment: scroll;
     }
 
@@ -413,7 +426,7 @@ footer > a:last-child {
         left: 0;
         width: 100%;
         padding: 25px;
-        background: #141526;
+        background: rgba(20, 21, 38, 0.95);
         flex-direction: column;
         text-align: center;
         gap: 20px;
@@ -425,6 +438,7 @@ footer > a:last-child {
 
     .hero {
         padding: 150px 7% 100px;
+        min-height: 100vh;
     }
 
     .hero-decoration {
