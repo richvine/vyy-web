@@ -1,5 +1,5 @@
 /* =================================
-   VYY WEBSITE - UPDATED STYLES
+   VYY WEBSITE - FINAL CSS FIX
 ================================= */
 
 * {
@@ -19,7 +19,6 @@ body {
     color: white;
     line-height: 1.6;
 
-    /* BACKGROUND IMAGE */
     background-color: #080914;
     background-image: url("https://raw.githubusercontent.com/richvine/vyy-web/main/Gemini_Generated_Image_97qc6097qc6097qc.jpg");
     background-size: cover;
@@ -84,7 +83,7 @@ header {
     cursor: pointer;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -94,7 +93,6 @@ header {
     justify-content: space-between;
     position: relative;
     overflow: hidden;
-
     background: transparent;
 }
 
@@ -192,7 +190,7 @@ header {
     background: linear-gradient(135deg, #ec4899, #9333ea);
 }
 
-/* GENERAL SECTIONS */
+/* SECTIONS */
 
 .section {
     padding: 110px 10%;
@@ -397,17 +395,14 @@ footer > a:last-child {
     }
 }
 
-/* MOBILE RESPONSIVENESS */
+/* MOBILE */
 
 @media screen and (max-width: 768px) {
 
     body {
-        background-image: url("https://raw.githubusercontent.com/richvine/vyy-web/main/Gemini_Generated_Image_97qc6097qc6097qc.jpg") !important;
-
-        background-color: #080914;
-        background-size: auto 100vh;
+        background-size: cover;
         background-position: center top;
-        background-repeat: repeat-y;
+        background-repeat: no-repeat;
         background-attachment: scroll;
     }
 
