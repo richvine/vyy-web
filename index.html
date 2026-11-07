@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VYY | Creative Digital Experience</title>
+
+    <meta name="description" content="Welcome to VYY. Creativity meets innovation.">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <a href="#home" class="logo">VYY<span>.</span></a>
+
+            <button class="menu-button" id="menuButton" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="small-heading">WELCOME TO THE WORLD OF VYY</p>
+
+                <h1>
+                    Creativity Meets
+                    <span>Innovation.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover a digital experience built around
+                    creativity, imagination and endless possibilities.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#about" class="primary-button">Explore More</a>
+                    <a href="#contact" class="secondary-button">Contact Me</a>
+                </div>
+
+            </div>
+
+            <div class="hero-decoration">
+                <div class="circle"></div>
+                <div class="circle small-circle"></div>
+            </div>
+
+        </section>
+
+        <section class="about section" id="about">
+
+            <div class="section-heading">
+                <p>GET TO KNOW US</p>
+                <h2>About <span>VYY</span></h2>
+            </div>
+
+            <div class="about-card">
+
+                <h3>More Than Just a Website</h3>
+
+                <p>
+                    VYY represents creativity, ambition and the desire
+                    to build something extraordinary.
+
+                    This is a place where ideas come to life,
+                    possibilities grow and innovation begins.
+                </p>
+
+                <a href="#services" class="text-link">Discover More →</a>
+
+            </div>
+
+        </section>
+
+        <section class="services section" id="services">
+
+            <div class="section-heading">
+                <p>WHAT WE OFFER</p>
+                <h2>Explore Our <span>World</span></h2>
+            </div>
+
+            <div class="service-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">✦</div>
+                    <h3>Creativity</h3>
+                    <p>Bringing fresh ideas and imagination into every experience.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">◇</div>
+                    <h3>Innovation</h3>
+                    <p>Exploring new possibilities through technology and creativity.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✧</div>
+                    <h3>Digital Experience</h3>
+                    <p>Creating beautiful and engaging online experiences.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="contact section" id="contact">
+
+            <div class="section-heading">
+                <p>LET'S CONNECT</p>
+                <h2>Get In <span>Touch</span></h2>
+            </div>
+
+            <div class="contact-card">
+
+                <p>Have a question or an idea? Send me a message.</p>
+
+                <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    id="contact-form"
+                >
+
+                    <input type="hidden" name="form-name" value="contact">
+
+                    <p class="hidden-field">
+                        <label>
+                            Don't fill this out:
+                            <input name="bot-field">
+                        </label>
+                    </p>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
+
+                    <button type="submit">Send Message</button>
+
+                </form>
+
+                <p id="form-status" aria-live="polite"></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <a href="#home" class="logo">VYY<span>.</span></a>
+
+        <p>© <span id="year"></span> VYY. All rights reserved.</p>
+
+        <a href="#home">Back to Top ↑</a>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
