@@ -132,12 +132,34 @@
 
                 <p>Have a question or an idea? Send me a message.</p>
 
-                <form
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    netlify-honeypot="bot-field"
-                    id="contact-form"
+                <form action="https://formspree.io/f/mljjkbej" method="POST" id="contact-form">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+    >
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+    >
+
+    <textarea
+        name="message"
+        placeholder="Write your message..."
+        required
+    ></textarea>
+
+    <input type="hidden" name="_subject" value="New message from VYY">
+
+    <button type="submit">Send Message</button>
+
+</form>
+                    
                 >
 
                     <input type="hidden" name="form-name" value="contact">
